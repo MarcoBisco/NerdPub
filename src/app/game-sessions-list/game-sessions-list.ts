@@ -13,10 +13,11 @@ import { CommonModule } from '@angular/common';
 })
 export class GameSessionsList implements OnInit{
   gameSessions=signal<GameSession[]>([]);
+  gameService=inject(GameSessionService);
   service=inject(GameSessionService);
 
   ngOnInit(): void {
-    this.service.getGameSessions().subscribe({
+    this.service.getGameSessions('Bologna').subscribe({
       next: (sessions) => this.gameSessions.set(sessions),
       error: (err) => console.error('Error fetching game sessions:', err)
     });

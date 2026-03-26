@@ -20,9 +20,9 @@ export class GameSessionService {
         return ResponseEntity.ok(results);
     } */
   http=inject(HttpClient);
-  url = 'http://localhost:8080/api/gamesessions/search?';
+  url = 'http://localhost:8080/api/game-sessions';
 
-  getGameSessions(game?:string, days?:number, city?:string):Observable<GameSession[]>{
-    return this.http.get<GameSession[]>(this.url + `game=${game}&days=${days}&city=${city}`);
+  getGameSessions(city?:string):Observable<GameSession[]>{
+    return this.http.get<GameSession[]>(this.url +'/tonight/'+city);
   }
 }

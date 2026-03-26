@@ -1,11 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, inject, OnInit, signal } from '@angular/core';
+import { GameSessionPreview } from '../game-session-preview/game-session-preview';
+import { GameSessionService } from '../service/game-session-service';
+import { GameSession } from '../model/entities';
+import { FormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-game-sessions-list',
-  imports: [],
+  imports: [GameSessionPreview,FormsModule,CommonModule],
   templateUrl: './game-sessions-list.html',
   styleUrl: './game-sessions-list.css',
 })
-export class GameSessionsList {
+export class GameSessionsList implements OnInit{
+  gameSessions=signal<GameSession[]>([]);
+  service=inject(GameSessionService);
+
+  ngOnInit(): void {
+    this.service.getGameSessions().subscribe({
+      next: (sessions) => this.gameSessions.set(sessions),
+      error: (err) => console.error('Error fetching game sessions:', err)
+    });
+  }
+  
 
 }

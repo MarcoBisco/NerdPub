@@ -3,8 +3,7 @@
             <!-- s12: 100% su mobile (12/12) -->
             <!-- m10: ~83% su tablet, l8: ~66% su PC -->
             <!-- Usiamo il margine auto per centrare la colonna quando non occupa 12/12 -->
-            <div class="w3-col s12 m10 l8" style="float:none;margin:auto;">
-                <app-game-session-preview></app-game-session-preview>
+            <div class="w3-col s12 m10 l8" style="float:none;margin:auto;">                
                  @for (gameSession of gameSessions(); track gameSession.id){
                     <app-game-session-preview [gameSession]="gameSession"></app-game-session-preview>
                  }

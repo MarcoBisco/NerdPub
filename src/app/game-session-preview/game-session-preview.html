@@ -1,8 +1,17 @@
 <div class="gamesessionpreview">
     <div class="w3-card">
 
-        <p>{{ gameSession().game.title }}<p>
-        <p>{{ gameSession().game.title }}</p>
+        <h3>PUB</h3>
+        <p>{{ gameSession().pubTable.pub.name }}</p>
+        <p>{{ gameSession().pubTable.pub.address }}</p>
+        <p>{{ gameSession().pubTable.pub.city }}</p>
+        <p>{{ gameSession().pubTable.pub.phone }}</p>
+        <p>{{ gameSession().pubTable.pub.score }}</p>
+        <p>{{ gameSession().pubTable.capacity }}</p>
+        <h3>GAME</h3>
+        <p>{{ gameSession().game.title}}<p>
+        <p>{{ gameSession().game.description}}</p>
+        <h3>GIA
         <p>{{ gameSession().date }}</p>
     </div>
 </div>

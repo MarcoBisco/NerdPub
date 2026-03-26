@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@900&family=DM+Sans:wght@400;700&display=swap');
+
+:host {
+  display: block;
+  --amber: #d4933a;
+  --white: #f0ebe0;
+}
+
+.w3-card {
+  background-color: #1a1712 !important;
+  color: var(--white) !important;
+  border: 1px solid #2e2a22 !important;
+  border-radius: 12px !important;
+  padding: 25px !important;
+  transition: 0.3s ease;
+}
+
+.w3-card:hover {
+  border-color: var(--amber) !important;
+  transform: translateY(-5px);
+}
+
+h3 {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.7rem !important;
+  color: var(--amber) !important;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #2e2a22;
+  padding-bottom: 5px;
+}
+
+/* --- STILE PARAGRAFI --- */
+
+/* 1. NOME DEL PUB (Marchio NerdPub bicolore) */
+p:nth-of-type(1) {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  font-weight: 900;
+  margin: 0 !important;
+  /* Tecnica gradiente per fare Nerd (Arancio) e Pub (Bianco) senza span */
+  background: linear-gradient(to right, var(--amber) 52%, var(--white) 52%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* 2, 3, 4. Indirizzo, Città, Telefono */
+p:nth-of-type(2), p:nth-of-type(3), p:nth-of-type(4) {
+  font-size: 0.85rem;
+  color: #8a826e;
+  margin: 0 !important;
+}
+
+/* 5. Score */
+p:nth-of-type(5) {
+  font-weight: 700;
+  color: var(--amber);
+  margin-top: 10px !important;
+}
+
+/* 7. TITOLO GIOCO */
+p:nth-of-type(7) {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.6rem;
+  color: var(--amber);
+  margin: 10px 0 !important;
+}
+
+/* 8. DESCRIZIONE */
+p:nth-of-type(8) {
+  font-size: 0.9rem;
+  color: #8a826e;
+  font-style: italic;
+}
+
+/* 9. DATA (Trasformata in tasto) */
+p:nth-of-type(9) {
+  background: var(--amber);
+  color: #0f0d0a;
+  text-align: center;
+  padding: 10px;
+  border-radius: 8px;
+  font-weight: 700;
+  margin-top: 15px !important;
+  text-transform: uppercase;
+}
